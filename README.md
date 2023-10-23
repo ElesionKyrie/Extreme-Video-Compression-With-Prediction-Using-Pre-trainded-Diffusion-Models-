@@ -8,6 +8,8 @@ In the Benchmark section, we provide code for computing compression metrics for 
 ```
 python bench_uvg.py --project_srt uvg
 ```
-##Checkpoint
+##
+Checkpoint
+
 Regarding the checkpoints, we utilize two sets of them. One set includes "checkpoint_900000.pt," which is used for the video generation part. The other set contains six groups of checkpoints, and these checkpoints will be used for the image compression part, corresponding to six different compression qualities.
 Checkpont coming soon
