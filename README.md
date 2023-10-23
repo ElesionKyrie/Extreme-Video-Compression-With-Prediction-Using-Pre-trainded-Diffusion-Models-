@@ -37,6 +37,6 @@ Regarding the checkpoints, we utilize two sets of them. One set includes "checkp
 Checkpont coming soon
 
 
-![PSNR](CPAL/PSNR_24.png)
-![LPIPS](CPAL/LPISP_24.png)
-![FVD](CPAL/FVD_24.png)
+![PSNR](PSNR_24.png)
+![LPIPS](LPISP_24.png)
+![FVD](FVD_24.png)
