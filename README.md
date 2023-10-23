@@ -13,6 +13,9 @@ python bench_uvg.py --dataset "your path" --outpath "your path" --project_srt uv
 ```
 ## Checkpoint
 
+
+
+### checkpoints of image compression models
 | lambda | quality | 
 | ------- | ------- | 
 | 0.45  | [q5](https://drive.google.com/file/d/1uuKQJiozcBfgGMJ8CfM6lrXOZWv6RUDN/view?usp=sharing)  | 
@@ -22,7 +25,11 @@ python bench_uvg.py --dataset "your path" --outpath "your path" --project_srt uv
 |0.008 | [q1](https://drive.google.com/file/d/1VNE7rx-rBFLnNFkz56Zc-cPr6xrBBJdL/view?usp=sharing) | 
 | 0.004 | [q0](https://drive.google.com/file/d/1YGVJ9bpeEq0xfqka2xkaMzhDkeYFJi6q/view?usp=sharing) | 
 
-
+### checkpoints of video generation models
+ |checkpoints of diffusion model | 
+| ------- | 
+ | [link](https://drive.google.com/file/d/1uuKQJiozcBfgGMJ8CfM6lrXOZWv6RUDN/view?usp=sharing)  | 
+ 
 
 
 
@@ -30,4 +37,6 @@ python bench_uvg.py --dataset "your path" --outpath "your path" --project_srt uv
 
 
 Regarding the checkpoints, we utilize two sets of them. One set includes "checkpoint_900000.pt," which is used for the video generation part. The other set contains six groups of checkpoints, and these checkpoints will be used for the image compression part, corresponding to six different compression qualities.
+
+
 Checkpont coming soon
