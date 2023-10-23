@@ -38,5 +38,5 @@ Checkpont coming soon
 
 
 ![PSNR](PSNR_24.png)
-![LPIPS](LPISP_24.png)
+![LPIPS](LPIPS_24.png)
 ![FVD](FVD_24.png)
