@@ -28,7 +28,7 @@ python bench_uvg.py --dataset "your path" --outpath "your path" --project_srt uv
 ### checkpoints of video generation models
  |checkpoints of diffusion model | 
 | ------- | 
- | [link](https://drive.google.com/file/d/1uuKQJiozcBfgGMJ8CfM6lrXOZWv6RUDN/view?usp=sharing)  | 
+ | [link](https://drive.google.com/drive/u/0/folders/15pDq2ziTv3n5SlrGhGM0GVqwIZXgebyD)  | 
  
 
 
