@@ -1,6 +1,7 @@
 # CPAL:Extreme Video Compression With Prediction Using Pre-trainded Diffusion Models 
 ##
 For our project, the input is in the form of an array with a shape of (B, T, H, W, C), where each frame in the array has a fixed size of 128x128. The number of frames in each video is 30, resulting in a shape of (B, 30, 128, 128, 3). Before using this project, you may need to preprocess your video data accordingly.
+You can control which videos to process by choosing the values for start_idx and end_idx. Ensure that the selected range does not exceed the value of B (the number of videos in your dataset).
 ```
 python my_city_sender.py --data_npy "your npy path" --output_path "your path" --start_idx 0 --end_dix 1 
 ```
