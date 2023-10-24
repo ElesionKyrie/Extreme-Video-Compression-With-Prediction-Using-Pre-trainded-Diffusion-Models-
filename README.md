@@ -1,4 +1,4 @@
-# CPAL:Extreme Video Compression With Prediction Using Pre-trainded Diffusion Models 
+# Extreme Video Compression With Prediction Using Pre-trainded Diffusion Models 
 ## Usage
 ### Compress
 For our project, the input is in the form of an array with a shape of (B, T, H, W, C), where each frame in the array has a fixed size of 128x128. The number of frames in each video is 30, resulting in a shape of (B, 30, 128, 128, 3). Before using this project, you may need to preprocess your video data accordingly.
