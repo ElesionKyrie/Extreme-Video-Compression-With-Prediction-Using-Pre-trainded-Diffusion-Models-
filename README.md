@@ -34,9 +34,9 @@ Regarding the checkpoints, we utilize two sets of them. One set includes "checkp
 
 
 
-Checkpont coming soon
 
 
+### Model performance chart
 ![PSNR](PSNR_24.png)
 ![LPIPS](LPIPS_24.png)
 ![FVD](FVD_24.png)
