@@ -29,7 +29,7 @@ Regarding the checkpoints, we utilize two sets of them. One set includes "checkp
 ### checkpoints of video generation models
  |checkpoints of diffusion model | 
 | ------- | 
- | [link](https://drive.google.com/drive/u/0/folders/15pDq2ziTv3n5SlrGhGM0GVqwIZXgebyD)  | 
+ | [link](https://drive.google.com/file/d/1rezZ0kwPfAk-WPgD_0vwO6zCwjOhm6Dk/view)  | 
 
 
 
