@@ -19,11 +19,11 @@ Regarding the checkpoints, we utilize two sets of them. One set includes "checkp
 
 | lambda | quality | 
 | ------- | ------- | 
-| 0.45  | [q5](https://drive.google.com/file/d/1uuKQJiozcBfgGMJ8CfM6lrXOZWv6RUDN/view?usp=sharing)  | 
-| 0.15  | [q4](https://drive.google.com/file/d/1s544Uxv0gBY3WvKBcGNb3Fb22zfmd9PL/view?usp=sharing) | 
-|0.032  |[q3](https://drive.google.com/file/d/1Moody9IR8CuAGwLCZ_ZMTfZXT0ehQhqc/view?usp=sharing)  | 
-| 0.015  |[q2](https://drive.google.com/file/d/1MWlYAmpHbWlGtG7MBBTPEew800grY5yC/view?usp=sharing) | 
-|0.008 | [q1](https://drive.google.com/file/d/1VNE7rx-rBFLnNFkz56Zc-cPr6xrBBJdL/view?usp=sharing) | 
+| 0.45  | [q5](https://drive.google.com/file/d/1_RCV0oVKOac543XGrpocnBNUJvtjPDTB/view?usp=drive_link)  | 
+| 0.15  | [q4](https://drive.google.com/file/d/1BA8JxfWSCXBYZsGS2GTsdPDbPS-UXeUH/view?usp=drive_link) | 
+|0.032  |[q3](https://drive.google.com/file/d/1nyYvHlEivNW_PXAN3wPfIRPXz8oBs_Ff/view?usp=drive_link)  | 
+| 0.015  |[q2](https://drive.google.com/file/d/1Cja3YInI7XU0iJZm0tVtGbau1OWlAaJW/view?usp=drive_link) | 
+|0.008 | [q1](https://drive.google.com/file/d/1A7f4beJEd-fMj0pwZ0ayswq_j2FoDxD4/view?usp=drive_link) | 
 | 0.004 | [q0](https://drive.google.com/file/d/1TVursXwljO0V-wQUm7i8yNqDVKfen51S/view?usp=drive_link) | 
 
 ### checkpoints of video generation models
