@@ -24,7 +24,7 @@ Regarding the checkpoints, we utilize two sets of them. One set includes "checkp
 |0.032  |[q3](https://drive.google.com/file/d/1Moody9IR8CuAGwLCZ_ZMTfZXT0ehQhqc/view?usp=sharing)  | 
 | 0.015  |[q2](https://drive.google.com/file/d/1MWlYAmpHbWlGtG7MBBTPEew800grY5yC/view?usp=sharing) | 
 |0.008 | [q1](https://drive.google.com/file/d/1VNE7rx-rBFLnNFkz56Zc-cPr6xrBBJdL/view?usp=sharing) | 
-| 0.004 | [q0](https://drive.google.com/file/d/1YGVJ9bpeEq0xfqka2xkaMzhDkeYFJi6q/view?usp=sharing) | 
+| 0.004 | [q0](https://drive.google.com/file/d/1TVursXwljO0V-wQUm7i8yNqDVKfen51S/view?usp=drive_link) | 
 
 ### checkpoints of video generation models
  |checkpoints of diffusion model | 
