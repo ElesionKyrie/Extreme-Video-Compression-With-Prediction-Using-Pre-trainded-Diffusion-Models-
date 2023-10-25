@@ -30,6 +30,7 @@ The six weights need to be moved to the "NN_CheckPoint" folder.
 
 ### checkpoints of video generation models
 
+This individual weight needs to be moved to the "checkpoints/sender" folder.
 
  |checkpoints of diffusion model | 
 | ------- | 
