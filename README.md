@@ -49,7 +49,7 @@ Regarding the checkpoints, we utilize two sets of them. One set includes "checkp
 
 ### checkpoints of image compression models
 
-The six weights need to be moved to the "NN_CheckPoint" folder.
+The six weights need to be moved to the "checkpoints/neural network" folder.
 
 | lambda | quality | 
 | ------- | ------- | 
