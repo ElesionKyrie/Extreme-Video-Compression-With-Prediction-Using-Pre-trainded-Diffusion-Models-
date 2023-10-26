@@ -18,7 +18,7 @@ torch.set_num_threads(1)
 
 @torch.no_grad()
 def inference(model, x, patch):
-
+    x = x.unsqueeze(0)
     h, w = x.size(2), x.size(3)
     p = patch  # maximum 6 strides of 2
     new_h = (h + p - 1) // p * p

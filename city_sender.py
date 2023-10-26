@@ -51,7 +51,7 @@ def parse_args_and_config():
         '--config', type=str, default="configs/mine.yml", help='Path to the config file')
     parser.add_argument('--seed', type=int, default=1234, help='Random seed')
 
-    parser.add_argument('--exp', type=str, default='/checkpoints/sender',
+    parser.add_argument('--exp', type=str, default='checkpoints/sender',
                         help='Path for saving running related data.')
 
     parser.add_argument('--ni', default=True, action='store_true',
@@ -112,9 +112,9 @@ def parse_args_and_config():
         "--path",
         dest="paths",
         type=str,
-        nargs='+',  # 指定多个值
-        default=["NN_CheckPoint/0.pth.tar", "NN_CheckPoint/1.pth.tar", "NN_CheckPoint/2.pth.tar", "NN_CheckPoint/3.pth.tar",
-                 "NN_CheckPoint/4.pth.tar", "NN_CheckPoint/5.pth.tar"],
+        nargs='+',
+        default=["checkpoints/neural network/0.pth.tar", "checkpoints/neural network/1.pth.tar", "checkpoints/neural network/2.pth.tar", "checkpoints/neural network/3.pth.tar",
+                 "checkpoints/neural network/4.pth.tar", "checkpoints/neural network/5.pth.tar"],
         # required=True,
         help="checkpoint path",
     )
@@ -305,7 +305,7 @@ class SenderCity:
 
         ckpt = self.config.sampling.ckpt_id
         ckpt_file = os.path.join(
-            self.args.log_path, f'checkpoint_{ckpt}.pt')
+            self.args.exp, f'checkpoint_{ckpt}.pt')
         states = torch.load(ckpt_file, map_location=self.config.device)
 
         from models.better.ncsnpp_more import UNetMore_DDPM

@@ -1,0 +1,29 @@
+ckpt: 900000
+command: python city_sender.py --data_npy data_npy/city_bonn.npy --output_path test
+  --start_idx 0 --end_dix 1
+config: configs/mine.yml
+config_mod: model.ngf=192 model.n_head_channels=192
+cuda: true
+data_npy: data_npy/city_bonn.npy
+end_idx: 0
+entropy_coder: ans
+entropy_estimation: false
+exp: checkpoints/sender
+final_only: true
+log_path: checkpoints/sender/logs
+ni: true
+output_path: test
+patch: 64
+paths:
+- checkpoints/neural network/0.pth.tar
+- checkpoints/neural network/1.pth.tar
+- checkpoints/neural network/2.pth.tar
+- checkpoints/neural network/3.pth.tar
+- checkpoints/neural network/4.pth.tar
+- checkpoints/neural network/5.pth.tar
+plot: true
+seed: 1234
+start_idx: 0
+subsample: null
+video_folder: checkpoints/sender/video_samples/arg_config
+video_gen: true
