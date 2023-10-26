@@ -23,6 +23,19 @@ python city_sender.py --data_npy "your npy path" --output_path "your path" --sta
 ```
 ### Benchmark
 In the Benchmark section, we provide code for computing compression metrics for H.264 and H.265. The input for this code should be 30 frames of 128x128 image frames, preferably named in the format "frame%d."
+
+the folder structure of dataset is like
+
+```
+/your path/
+ - frame0.png
+- frame1.png
+ - ...
+  - frame29.png
+```
+
+
+
 ```
 python bench_uvg.py --dataset "your path" --outpath "your path" --project_srt uvg
 ```
