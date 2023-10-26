@@ -64,9 +64,9 @@ The six weights need to be moved to the "NN_CheckPoint" folder.
 
 This individual weight needs to be moved to the "checkpoints/sender" folder.
 
- |checkpoints of diffusion model | 
+ |checkpoint of diffusion model | 
 | ------- | 
- | [link](https://drive.google.com/file/d/1rezZ0kwPfAk-WPgD_0vwO6zCwjOhm6Dk/view)  | 
+ | [checkpoint of diffusion model](https://drive.google.com/file/d/1rezZ0kwPfAk-WPgD_0vwO6zCwjOhm6Dk/view)  | 
 
 
 
@@ -74,6 +74,9 @@ This individual weight needs to be moved to the "checkpoints/sender" folder.
 
 
 ### Model performance chart
+
+The following images compare the compression performance of our model with the traditional video compression standards, H.264 and H.265. It can be observed that our model outperforms them at low bitrates (bpp). These data were computed on the first 24 videos from city_bonn.npy.
+
 ![PSNR](PSNR_24.png)
 ![LPIPS](LPIPS_24.png)
 ![FVD](FVD_24.png)
