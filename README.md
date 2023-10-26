@@ -38,6 +38,8 @@ the folder structure of dataset is like
 
 
 
+For project_str, this is simply a string used to distinguish your data.
+
 ```
 python bench_uvg.py --dataset "your path" --outpath "your path" --project_srt uvg
 ```
