@@ -7,11 +7,12 @@
 Python 3.8 and conda, get [Conda](https://www.anaconda.com/)
 CUDA if want to use GPU
 Environment
+
+```
 conda create -n $YOUR_PY38_ENV_NAME python=3.8
 conda activate $YOUR_PY38_ENV_NAME
-
 pip install -r requirements.txt
-
+```
 
 
 
