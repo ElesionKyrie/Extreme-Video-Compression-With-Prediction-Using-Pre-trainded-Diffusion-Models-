@@ -780,8 +780,8 @@ def main():
     metrics_array_265 = np.array([psnr_values_2, lpips_values_2, fvd_values_2, bpp_values_2])
     # print(metrics_array_264.shape)
     # 假设 output_folder 是保存文件的目录
-    np.save(os.path.join(output_folder, "bench_uvg_264.npy"), metrics_array_264)
-    np.save(os.path.join(output_folder, "bench_uvg_265.npy"), metrics_array_265)
+    np.save(os.path.join(output_folder, f"bench_{args.project_str}_264.npy"), metrics_array_264)
+    np.save(os.path.join(output_folder, f"bench_{args.project_str}_265.npy"), metrics_array_265)
     # 绘制PSNR关于BPP的曲线图
     plot_and_save_graph(bpp_values_1, psnr_values_1, bpp_values_2, psnr_values_2, '264', '265', 'PSNR',
                         output_folder_265)
