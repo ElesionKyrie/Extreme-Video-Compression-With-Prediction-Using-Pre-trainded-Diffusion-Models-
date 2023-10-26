@@ -32,7 +32,7 @@ the folder structure of dataset is like
  - frame0.png
 - frame1.png
  - ...
-  - frame29.png
+ - frame29.png
 ```
 
 
