@@ -1,7 +1,7 @@
 import cv2
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Union
-from eval_models import PerceptualLoss
+from lpips_utils.eval_models import PerceptualLoss
 import re
 import os
 import subprocess
@@ -625,41 +625,6 @@ def read_video(video_files, image_size):
 
     return frames
 
-# # 文件路径
-# image_dir = '/media/myworkstation/文档/Dataset/UVG/UVG_frames/'
-# image_size = 128
-# num_images = 30
-#
-# # 构建文件路径列表
-# image_files = [f"{image_dir}output_{str(i+1).zfill(4)}.png" for i in range(num_images)]
-#
-# # 读取并处理图像
-# processed_frames = read_video(image_files, image_size)
-#
-# # 将处理后的图像堆叠成数组
-# processed_frames = np.expand_dims(processed_frames, axis=0)
-# processed_frames = np.array(processed_frames)
-# frames_array = processed_frames.transpose(0, 1, 4, 2, 3)  # 调整维度顺序
-# np.save('/media/myworkstation/文档/Dataset/UVG/UVG.npy', frames_array)
-# # 打印数组形状
-# print(frames_array.shape)
-#
-#
-# # 定义主函数，该函数接受文件路径、图像大小和图像数量作为参数
-# def process_images(image_dir, image_size, num_images):
-#     # 构建文件路径列表
-#     image_files = [f"{image_dir}output_{str(i).zfill(4)}.png" for i in range(num_images)]
-#
-#     # 读取并处理图像
-#     processed_frames = read_video(image_files, image_size)
-#
-#     # 将处理后的图像堆叠成数组
-#     processed_frames = np.expand_dims(processed_frames, axis=0)
-#     processed_frames = np.array(processed_frames)
-#
-#     # 返回处理后的图像数组
-#     return processed_frames
-
 
 def plot_and_save_graph(bpp_values_1, psnr_values_1, bpp_values_2, psnr_values_2, label_1, label_2, metric_name, output_folder):
     plt.figure(figsize=(10, 6))
@@ -674,14 +639,6 @@ def plot_and_save_graph(bpp_values_1, psnr_values_1, bpp_values_2, psnr_values_2
     plt.close()
 
 
-
-
-
-
-
-
-# 遍历视频并进行处理
-# for j in range(46):
 def main():
     parser = argparse.ArgumentParser(
         add_help=False,
@@ -720,8 +677,8 @@ def main():
     parser.add_argument(
         "--project_str",
         type=str,
-        choices=["city", "uvg"],
-        help="Select one of the provided strings (city, uvg)",
+        choices=["city", "smm", "uvg"],
+        help="Select one of the provided strings (city, smm, uvg)",
     )
 
     args = parser.parse_args()
@@ -756,7 +713,7 @@ def main():
 
     psnr_values_1 ,lpips_values_1, fvd_values_1,bpp_values_1  = parse_metrics_file(os.path.join(output_folder_264, f"psnr_lpips_fvd_bpp.txt"))
 
-    psnr_values_2 ,lpips_values_2, fvd_values_2, bpp_values_2  = parse_metrics_file(os.path.join(output_folder_265, f"psnr_lpips_fvd_bpp.txt"))
+    psnr_values_2 ,lpips_values_2,fvd_values_2, bpp_values_2  = parse_metrics_file(os.path.join(output_folder_265, f"psnr_lpips_fvd_bpp.txt"))
 
     # metrics_array_264 = np.empty((4, 52))
     #
