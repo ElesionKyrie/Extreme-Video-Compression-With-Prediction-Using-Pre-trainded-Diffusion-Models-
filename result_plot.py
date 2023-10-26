@@ -9,13 +9,6 @@ sns.set()
 
 
 
-
-
-
-
-
-
-
 def plot_line(x_values_new, y_values_new,x_values_264,y_values_264, x_values_265,y_values_265,x_label, y_label, title, save_path=None):
 
     plt.plot(x_values_new, y_values_new, label='Neural Network',color='red', marker='o', linestyle='-')
@@ -43,8 +36,8 @@ def plot(databatchidx, psnr_arr, lpips_arr, fvd_arr, output_path):
     all_h265_bpps, all_h265_psnr, all_h265_lpips, all_h265_fvd = [], [], [], []
 
 
-    city_bm_h264 = np.load("./bench_264_24.npy")[databatchidx]
-    city_bm_h265 = np.load("./bench_265_24.npy")[databatchidx]
+    city_bm_h264 = np.load(".bench_npy/bench_264_24.npy")[databatchidx]
+    city_bm_h265 = np.load("bench_npy/bench_265_24.npy")[databatchidx]
 
 
     h264_bpp = city_bm_h264[3]
