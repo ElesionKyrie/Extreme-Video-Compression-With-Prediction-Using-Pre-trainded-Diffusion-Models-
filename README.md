@@ -1,5 +1,20 @@
 # Extreme Video Compression With Prediction Using Pre-trainded Diffusion Models 
 ## Usage
+
+
+
+### Prerequisites
+Python 3.8 and conda, get [Conda](https://www.anaconda.com/)
+CUDA if want to use GPU
+Environment
+conda create -n $YOUR_PY38_ENV_NAME python=3.8
+conda activate $YOUR_PY38_ENV_NAME
+
+pip install -r requirements.txt
+
+
+
+
 ### Compress
 For our project, the input is in the form of an array with a shape of (B, T, H, W, C), where each frame in the array has a fixed size of 128x128. The number of frames in each video is 30, resulting in a shape of (B, 30, 128, 128, 3). Before using this project, you may need to preprocess your video data accordingly.
 You can control which videos to process by choosing the values for start_idx and end_idx. Ensure that the selected range does not exceed the value of B (the number of videos in your dataset).
