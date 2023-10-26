@@ -38,7 +38,7 @@ the folder structure of dataset is like
 
 
 
-For project_str, this is simply a string used to distinguish your data.
+For project_str, this is simply a string used to distinguish your data.Here we are using "uvg."
 
 ```
 python bench_uvg.py --dataset "your path" --outpath "your path" --project_srt uvg
