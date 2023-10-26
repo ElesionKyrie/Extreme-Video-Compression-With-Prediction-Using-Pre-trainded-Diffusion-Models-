@@ -21,7 +21,7 @@ For our project, the input is in the form of an array with a shape of (B, T,  C,
 
 You can control which videos to process by choosing the values for start_idx and end_idx. Ensure that the selected range does not exceed the value of B (the number of videos in your dataset).
 ```
-python city_sender.py --data_npy "city_bonn.npy" --output_path "your path" --start_idx 0 --end_dix 1 
+python city_sender.py --data_npy "data_npy/city_bonn.npy" --output_path "your path" --start_idx 0 --end_dix 1 
 ```
 ### Benchmark
 In the Benchmark section, we provide code for computing compression metrics for H.264 and H.265. The input for this code should be 30 frames of 128x128 image frames, preferably named in the format "frame%d."
@@ -77,6 +77,6 @@ This individual weight needs to be moved to the "checkpoints/sender" folder.
 
 The following images compare the compression performance of our model with the traditional video compression standards, H.264 and H.265. It can be observed that our model outperforms them at low bitrates (bpp). These data were computed on the first 24 videos from city_bonn.npy.
 
-![PSNR](PSNR_24.png)
-![LPIPS](LPIPS_24.png)
-![FVD](FVD_24.png)
+![PSNR](result_img/PSNR_24.png)
+![LPIPS](result_img/LPIPS_24.png)
+![FVD](result_img/FVD_24.png)
