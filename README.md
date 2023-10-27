@@ -30,10 +30,10 @@ the folder structure of dataset is like
 
 ```
 /your path/
- - frame0.png
+- frame0.png
 - frame1.png
- - ...
- - frame29.png
+- ...
+- frame29.png
 ```
 
 
