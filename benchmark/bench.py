@@ -268,39 +268,39 @@ def to_tensors(
 
 
 def parse_metrics_file(file_path):
-    # 打开文件
+
     with open(file_path, 'r') as file:
         content = file.read()
 
-    # 初始化空列表用于存放各个指标
+
     psnr_list = []
     lpips_list = []
     fvd_list = []
     bpp_list = []
 
-    # 分割内容为每一行
+
     lines = content.split('\n')
 
-    # 遍历每一行并解析指标
+
     for line in lines:
         if line:
             parts = line.split(',')
             psnr = float(parts[0].split(':')[1].strip())
-            # print(psnr)
-            lpips = float(parts[1].split(':')[1].strip())
-            # print(lpips)
-            fvd = float(parts[2].split(':')[1].strip())
-            # print(fvd)
-            bpp = float(parts[3].split(':')[1].strip())
-            # print(bpp)
 
-            # 将解析的指标添加到相应的列表中
+            lpips = float(parts[1].split(':')[1].strip())
+
+            fvd = float(parts[2].split(':')[1].strip())
+
+            bpp = float(parts[3].split(':')[1].strip())
+
+
+
             psnr_list.append(psnr)
             lpips_list.append(lpips)
             fvd_list.append(fvd)
             bpp_list.append(bpp)
 
-    # 返回四个列表
+
     return psnr_list, lpips_list, fvd_list, bpp_list
 
 
@@ -309,12 +309,10 @@ def get_filesize(filepath: Union[Path, str]) -> int:
     return Path(filepath).stat().st_size
 #
 def calculate_psnr_color(original_image, compressed_image):
-    # Load original and compressed images
+
     orig_img = cv2.imread(original_image)
     comp_img = cv2.imread(compressed_image)
-    # print(orig_img.shape)
-    # print(comp_img.shape)
-    # Check if the images have the same shape
+
     if orig_img.shape != comp_img.shape:
         raise ValueError("Original and compressed images must have the same dimensions.")
 
@@ -417,17 +415,12 @@ def ycbcr2rgb(ycbcr: Tensor) -> Tensor:
 
 
 
-# width = args.width
-# height = args.width
-# bitdepth = 8
-# framerate = args.framerate
 
-# 直接提供视频格式
 video_format = VideoFormat.YUV420
 
 
 
-# 定义视频压缩和性能计算函数
+
 def compress_and_evaluate(input_folder, output_folder, codec, qp_range, pix_fmt, width_in, height_in, framerate_in ,project_str ,bitdepth = 8):
     os.makedirs(output_folder, exist_ok=True)
 
@@ -449,12 +442,7 @@ def compress_and_evaluate(input_folder, output_folder, codec, qp_range, pix_fmt,
 
 
 
-        # command = f"ffmpeg -i {compressed_file} -pix_fmt yuv420p{decompressed_folder}/reconstructed.yuv"
-        # subprocess.run(command, shell=True)
 
-
-
-        # filename_org = f"{input_folder}/{project_str}_128x128_30Hz_8bit_yuv420p8.yuv"  # 替换为实际的文件路径
 
         mmap1 = np.memmap(input_folder,
                           dtype=np.uint8, mode="r")
@@ -503,15 +491,15 @@ def compress_and_evaluate(input_folder, output_folder, codec, qp_range, pix_fmt,
             os.makedirs(dec_subfolder, exist_ok=True)
 
 
-            # 保存图像到子文件夹
+
             org_pil_image.save(os.path.join(org_subfolder, f'org_image_{i}.png'))  # 保存原始图像
             dec_pil_image.save(os.path.join(dec_subfolder, f'dec_image_{i}.png'))  # 保存解码后的图像
-            # print(org_rgb)
+
 
             mse_rgb = (org_rgb - dec_rgb).pow(2).mean()
             psnr = 10 * np.log10((255 ** 2) / mse_rgb.cpu().numpy())
             psnr_qp.append(psnr)
-            # print(psnr)
+
             model_lpips = PerceptualLoss(model='net-lin', net='alex',
                                          device='cuda')
             lpips = model_lpips.forward(org_rgb, dec_rgb)
@@ -530,8 +518,7 @@ def compress_and_evaluate(input_folder, output_folder, codec, qp_range, pix_fmt,
         fvd.append(calculate_fvd(org_frames_tensor, dec_frames_tensor))
 
 
-        # print("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-        # print(org_frames_tensor)
+
 
 
         bpp.append(float((get_filesize(compressed_file) * bitdepth / (width_in * height_in * framerate_in))))
@@ -540,26 +527,13 @@ def compress_and_evaluate(input_folder, output_folder, codec, qp_range, pix_fmt,
             for psnr_val, lpips_val, fvd_val, bpp_val in zip(psnrs, lpips_mean, fvd, bpp):
                 f.write(f"PSNR: {psnr_val}, LPIPS: {lpips_val}, FVD: {fvd_val}, BPP: {bpp_val}\n")
 
-    # file_path = f"{output_folder}/psnr_lpips_bpp.txt"
-
-
-
-# width = args.width
-# height = args.width
-# bitdepth = 8
-# framerate = args.framerate
 
 
 
 import subprocess
 
 def convert_images_to_yuv(input_path, output_path, project_str,num_images=30):
-    # 创建一个空列表，用于存储图像文件的路径
-    image_list = []
-    # 生成图像文件路径并添加到列表中
-    # for i in range(num_images):
-    #     img_path = f"{input_path}/frame{i+1}.png"
-    #     image_list.append(img_path)
+
     print("*"*70)
     print(f"{input_path}/frame%d.png")
     cmd = [
@@ -574,37 +548,10 @@ def convert_images_to_yuv(input_path, output_path, project_str,num_images=30):
         f"{output_path}/{project_str}.yuv",
     ]
     subprocess.run(cmd)
-    # for attempt in range(3):
-    #     try:
-    #         path = f"{input_path}/frame%d.png"
-    #         if os.path.exists(path):
-    #             print(f"{path} exists.")
-    #         else:
-    #             print(f"{path} does not exist.")        # 设置命令行参数
-    #         cmd = [
-    #             "ffmpeg",
-    #             "-y",
-    #             "-framerate", "30",
-    #             "-f", "image2",
-    #             "-i", f"{input_path}/frame%d.png",
-    #             "-c:v", "rawvideo",
-    #             "-pix_fmt", "yuv420p",
-    #             "-an",
-    #             f"{output_path}/{project_str}.yuv",
-    #         ]
-    #         subprocess.run(cmd)
-    #     except FileNotFoundError:
-    #         print(f"File not found: {input_path}")
-    #         return None
-    #     except Exception as e:
-    #         print(f"Error: {e}")
-    #         if attempt < 3 - 1:
-    #             print(f"Retrying in {1} seconds...")
-    #             time.sleep(1)
-    #     # 执行命令行
 
 
-# 定义center_crop函数
+
+
 def center_crop(image):
     h, w, c = image.shape
     new_h, new_w = h if h < w else w, w if w < h else h
@@ -612,7 +559,7 @@ def center_crop(image):
     c_min, c_max = w // 2 - new_w // 2, w // 2 + new_w // 2
     return image[r_min:r_max, c_min:c_max, :]
 
-# 定义read_video函数
+
 def read_video(video_files, image_size):
     frames = []
     for file in video_files:
@@ -625,40 +572,7 @@ def read_video(video_files, image_size):
 
     return frames
 
-# # 文件路径
-# image_dir = '/media/myworkstation/文档/Dataset/UVG/UVG_frames/'
-# image_size = 128
-# num_images = 30
-#
-# # 构建文件路径列表
-# image_files = [f"{image_dir}output_{str(i+1).zfill(4)}.png" for i in range(num_images)]
-#
-# # 读取并处理图像
-# processed_frames = read_video(image_files, image_size)
-#
-# # 将处理后的图像堆叠成数组
-# processed_frames = np.expand_dims(processed_frames, axis=0)
-# processed_frames = np.array(processed_frames)
-# frames_array = processed_frames.transpose(0, 1, 4, 2, 3)  # 调整维度顺序
-# np.save('/media/myworkstation/文档/Dataset/UVG/UVG.npy', frames_array)
-# # 打印数组形状
-# print(frames_array.shape)
-#
-#
-# # 定义主函数，该函数接受文件路径、图像大小和图像数量作为参数
-# def process_images(image_dir, image_size, num_images):
-#     # 构建文件路径列表
-#     image_files = [f"{image_dir}output_{str(i).zfill(4)}.png" for i in range(num_images)]
-#
-#     # 读取并处理图像
-#     processed_frames = read_video(image_files, image_size)
-#
-#     # 将处理后的图像堆叠成数组
-#     processed_frames = np.expand_dims(processed_frames, axis=0)
-#     processed_frames = np.array(processed_frames)
-#
-#     # 返回处理后的图像数组
-#     return processed_frames
+
 
 
 def plot_and_save_graph(bpp_values_1, psnr_values_1, bpp_values_2, psnr_values_2, label_1, label_2, metric_name, output_folder):
@@ -674,14 +588,6 @@ def plot_and_save_graph(bpp_values_1, psnr_values_1, bpp_values_2, psnr_values_2
     plt.close()
 
 
-
-
-
-
-
-
-# 遍历视频并进行处理
-# for j in range(46):
 def main():
     parser = argparse.ArgumentParser(
         add_help=False,
@@ -758,39 +664,22 @@ def main():
 
     psnr_values_2 ,lpips_values_2, fvd_values_2, bpp_values_2  = parse_metrics_file(os.path.join(output_folder_265, f"psnr_lpips_fvd_bpp.txt"))
 
-    # metrics_array_264 = np.empty((4, 52))
-    #
-    # # 填充数组，按照顺序填充 psnr, lpips, fvd, bpp
-    # metrics_array_264[0, :] = psnr_values_1
-    # metrics_array_264[1, :] = lpips_values_1
-    # metrics_array_264[2, :] = fvd_values_1
-    # metrics_array_264[3, :] = bpp_values_1
-    #
-    # metrics_array_265 = np.empty((4, 52))
-    #
-    # # 填充数组，按照顺序填充 psnr, lpips, fvd, bpp
-    # metrics_array_265[0, :] = psnr_values_2
-    # metrics_array_265[1, :] = lpips_values_2
-    # metrics_array_265[2, :] = fvd_values_2
-    # metrics_array_265[3, :] = bpp_values_2
-    #
-    # np.save(os.path.join(output_folder,"bench_uvg_264.npy"),metrics_array_264)
-    # np.save(os.path.join(output_folder,"bench_uvg_265.npy"), metrics_array_265)
+
     metrics_array_264 = np.array([psnr_values_1, lpips_values_1, fvd_values_1, bpp_values_1])
     metrics_array_265 = np.array([psnr_values_2, lpips_values_2, fvd_values_2, bpp_values_2])
-    # print(metrics_array_264.shape)
-    # 假设 output_folder 是保存文件的目录
+
+
     np.save(os.path.join(output_folder, f"bench_{args.project_str}_264.npy"), metrics_array_264)
     np.save(os.path.join(output_folder, f"bench_{args.project_str}_265.npy"), metrics_array_265)
-    # 绘制PSNR关于BPP的曲线图
+
     plot_and_save_graph(bpp_values_1, psnr_values_1, bpp_values_2, psnr_values_2, '264', '265', 'PSNR',
                         output_folder_265)
 
-    # 绘制LPIPS关于BPP的曲线图
+
     plot_and_save_graph(bpp_values_1, lpips_values_1, bpp_values_2, lpips_values_2, '264', '265', 'LPIPS',
                         output_folder_265)
 
-    # 绘制FVD关于BPP的曲线图
+
     plot_and_save_graph(bpp_values_1, fvd_values_1, bpp_values_2, fvd_values_2, '264', '265', 'FVD', output_folder_265)
 
 
