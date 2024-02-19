@@ -1,4 +1,4 @@
-# Extreme Video Compression With Prediction Using Pre-trainded Diffusion Models 
+# Extreme Video Compression With Prediction Using Pre-trained Diffusion Models 
 ## Usage
 
 
